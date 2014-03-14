@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Last.fm Now Playing Widget</title>
+	<link href="http://fonts.googleapis.com/css?family=Cabin:400,600" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+	<section class="intro cf">
+
+		<div class="intro-widget">
+
+		<script type="text/template" id="largeArtworkTemplate">
+			<a href="{ track.url }" class="large-widget" alt="View information on Last.fm">
+				<div class="large-widget__image-wrapper">
+					<img class="large-widget__image" src="{ track.image.extralarge }" alt="Album artwork">
+				</div>
+				<div class="large-widget__details">
+					<div class="large-widget__artist">{ track.artist }</div>
+					<div class="large-widget__title">{ track.title }</div>
+				</div>
+			</a>
+		</script>
+
+		</div>
+
+		<div class="intro-content">
+
+			<h1>Last.fm Now Playing Widget</h1>
+			<p>A jQuery plugin for showing the currently playing track on Last.fm.</p>
+
+			<ul>
+
+				<li>
+					<h3>Team Friendly</h3>
+					<p>Find the most recently played track from multiple users</p>
+				</li>
+
+				<li>
+					<h3>Easy to Customize</h3>
+					<p>Create your own markup to display the track information</p>
+				</li>
+
+			</ul>
+
+			<button>View on GitHub</button>
+
+		</div>
+
+	</section>
+
+	<section class="usage">
+		
+		<h2>Using Last.fm Now Playing Widget</h2>
+
+		<h3>Requirements</h3>
+
+		<p>The plugin requires <a href="http://jquery.com/download/" target="_blank">jQuery</a>, we recommend using the latest version. You also need to have a <a href="http://www.last.fm/api/account/create" target="_blank">Last.fm API key</a>.</p>
+
+		<h3>Installation</h3>
+
+		<ol>
+
+			<li>
+
+				<h4>Add Required Scripts</h4>
+
+				<p>Make sure you include jQuery before adding the plugin at the bottom of your HTML document</p>
+
+<pre><code>&lt;script src="/scripts/vendor/jquery.js"&gt;&lt;script&gt;
+&lt;script src="/scripts/plugins/lastfmnowplaying.js"&gt;&lt;script&gt;</code></pre>
+
+			</li>
+
+			<li>
+
+				<h4>Add a Template</h4>
+
+				<p>Add a template into your HTML document as in the example below. This can appear anywhere on your web page and can contain any markup you'd like. The template makes use of a number of custom tags surrounded by <code>{}</code>'s. Each template must have it's own ID.</p>
+
+<pre><code>&lt;script type=&quot;text/template&quot; id=&quot;lastFmWidget&quot;&gt;
+	&lt;div&gt;{ track.artist }&lt;/div&gt;
+	&lt;div&gt;{ track.title }&lt;/div&gt;
+	&lt;div&gt;{ track.album }&lt;/div&gt;
+	&lt;img src=&quot;{ track.image.medium }&quot;&gt;
+&lt;/script&gt;</code></pre>
+
+				<p>Here is a full list of available tags:</p>
+
+				<dl class="cf">
+
+					<dt><code>{ track.artist }</code></dt>
+					<dd>The track's artist</dd>
+
+					<dt><code>{ track.title }</code></dt>
+					<dd>The title of the track</dd>
+
+					<dt><code>{ track.album }</code></dt>
+					<dd>The album the track belongs to</dd>
+
+					<dt><code>{ track.url }</code></dt>
+					<dd>A URL to track information on Last.fm</dd>
+
+					<dt><code>{ track.image.small }</code></dt>
+					<dd>A 34 x 34px image of the track's artwork</dd>
+
+					<dt><code>{ track.image.medium }</code></dt>
+					<dd>A 64 x 64px image of the track's artwork</dd>
+
+					<dt><code>{ track.image.large }</code></dt>
+					<dd>A 126 x 126px image of the track's artwork</dd>
+
+					<dt><code>{ track.image.extralarge }</code></dt>
+					<dd>A 300 x 300px image of the track's artwork</dd>
+
+				</dl>
+
+			</li>
+
+			<li>
+
+				<h4>Call Widget</h4>
+
+				<p>The widget is called using the following in your main JavaScript file.</p>
+
+<pre><code>$('#lastFmWidget').lastfmNowPlaying({
+	apiKey: 'YOUR-API-KEY',
+	members: ['YOUR-LASTFM-USERNAME']
+});</code></pre>
+
+				<p>Be sure to update the <code>apiKey</code> and <code>members</code> options with your own information.</p>
+
+			</li>
+
+		</ol>
+
+	</section>
+
+	<section class="template-examples">
+
+		<h2>Template Examples</h2>
+
+		<p>Here are a few examples of different templates for the plugin. You can write whatever code you like for the template, the only requirement is a unique ID for the template and your desired combination of custom tags.</p>
+
+		<ul>
+			
+			<li>
+				
+				<h3>Large Artwork Template</h3>
+
+				<script type="text/template" id="largeArtworkTemplate">
+					<a href="{ track.url }" class="large-widget" alt="View information on Last.fm">
+						<div class="large-widget__image-wrapper">
+							<img class="large-widget__image" src="{ track.image.extralarge }" alt="Album artwork">
+						</div>
+						<div class="large-widget__details">
+							<div class="large-widget__artist">{ track.artist }</div>
+							<div class="large-widget__title">{ track.title }</div>
+						</div>
+					</a>
+				</script>
+
+				<button class="toggle-button">Show Source</button>
+
+				<pre class="js-slider"><code>&lt;script type=&quot;text/template&quot; id=&quot;largeArtworkTemplate&quot;&gt;
+  &lt;a href=&quot;{ track.url }&quot; class=&quot;large-widget&quot; alt=&quot;View information on Last.fm&quot;&gt;
+    &lt;div class=&quot;large-widget__image-wrapper&quot;&gt;
+      &lt;img class=&quot;large-widget__image&quot; src=&quot;{ track.image.extralarge }&quot; alt=&quot;Album artwork&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;large-widget__details&quot;&gt;
+      &lt;div class=&quot;large-widget__artist&quot;&gt;{ track.artist }&lt;/div&gt;
+      &lt;div class=&quot;large-widget__title&quot;&gt;{ track.title }&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+&lt;/script&gt;</code></pre>
+
+			</li>
+
+			<li>
+				
+				<h3>Minimal Template</h3>
+
+				<script type="text/template" id="minimalTemplate">
+					<a class="minimal-widget" href="{ track.url }">
+						<img class=" minimal-widget__image" src="{ track.image.small }">
+						<div class="minimal-widget__details">
+							<div class="minimal-widget__artist">{ track.artist }</div>
+							<div class="minimal-widget__title">{ track.title }</div>
+						</div>
+					</a>
+				</script>
+
+				<button class="toggle-button">Show Source</button>
+
+				<pre class="js-slider"><code>&lt;script type=&quot;text/template&quot; id=&quot;minimalTemplate&quot;&gt;
+	&lt;a class=&quot;minimal-widget&quot; href=&quot;{ track.url }&quot;&gt;
+		&lt;img class=&quot; minimal-widget__image&quot; src=&quot;{ track.image.small }&quot;&gt;
+		&lt;div class=&quot;minimal-widget__details&quot;&gt;
+			&lt;div class=&quot;minimal-widget__artist&quot;&gt;{ track.artist }&lt;/div&gt;
+			&lt;div class=&quot;minimal-widget__title&quot;&gt;{ track.title }&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/a&gt;
+&lt;/script&gt;</code></pre>
+
+			</li>
+
+			<li>
+				
+				<h3>Kitchen Sink Template</h3>
+
+				<script type="text/template" id="kitchenSinkTemplate">
+					<div class="kitchen-sink-widget">
+						<div class="kitchen-sink-widget__artist">Artist: { track.artist }</div>
+						<div class="kitchen-sink-widget__title">Title: { track.title }</div>
+						<div class="kitchen-sink-widget__album">Album: { track.album }</div>
+						<div class="kitchen-sink-widget__url">URL: { track.url }</div>
+						<img class="kitchen-sink-widget__image kitchen-sink-widget__image--small" src="{ track.image.small }">
+						<img class="kitchen-sink-widget__image kitchen-sink-widget__image--medium" src="{ track.image.medium }">
+						<img class="kitchen-sink-widget__image kitchen-sink-widget__image--large" src="{ track.image.large }">
+						<img class="kitchen-sink-widget__image kitchen-sink-widget__image--extralarge" src="{ track.image.extralarge }">
+					</div>
+				</script>
+
+				<button class="toggle-button">Show Source</button>
+
+				<pre class="js-slider"><code>&lt;script type=&quot;text/template&quot; id=&quot;kitchenSinkTemplate&quot;&gt;
+  &lt;div class=&quot;kitchen-sink-widget&quot;&gt;
+    &lt;div class=&quot;kitchen-sink-widget__artist&quot;&gt;Artist: { track.artist }&lt;/div&gt;
+    &lt;div class=&quot;kitchen-sink-widget__title&quot;&gt;Title: { track.title }&lt;/div&gt;
+    &lt;div class=&quot;kitchen-sink-widget__album&quot;&gt;Album: { track.album }&lt;/div&gt;
+    &lt;div class=&quot;kitchen-sink-widget__url&quot;&gt;URL: { track.url }&lt;/div&gt;
+    &lt;img class=&quot;kitchen-sink-widget__image kitchen-sink-widget__image--small&quot; src=&quot;{ track.image.small }&quot;&gt;
+    &lt;img class=&quot;kitchen-sink-widget__image kitchen-sink-widget__image--medium&quot; src=&quot;{ track.image.medium }&quot;&gt;
+    &lt;img class=&quot;kitchen-sink-widget__image kitchen-sink-widget__image--large&quot; src=&quot;{ track.image.large }&quot;&gt;
+    &lt;img class=&quot;kitchen-sink-widget__image kitchen-sink-widget__image--extralarge&quot; src=&quot;{ track.image.extralarge }&quot;&gt;
+  &lt;/div&gt;
+&lt;/script&gt;</code></pre>
+
+			</li>
+
+		</ul>
+
+	</section>
+
+	<small>A jQuery plugin by <a href="http://devteaminc.co/" target"_blank">DevTeam Inc.</a> We have nothing to do with <a href="http://www.last.fm/" target"_blank">Last.fm</a></small>
+	
+	<!-- Libraries -->
+	<script src="scripts/vendor/jquery/jquery.js"></script>
+
+	<!-- Plugins -->
+	<script src="scripts/plugins/jquery.lastfmnowplaying.js"></script>
+
+	<!-- Init Plugin -->
+	<script>
+
+$('#largeArtworkTemplate, #fancyArtworkTemplate, #minimalTemplate, #kitchenSinkTemplate').lastfmNowPlaying({
+	apiKey: 'd8abda572c7cfcb1522dfe167d6cd8fb',
+	members: [
+		'colouryum',
+		'pshillier',
+		'seengee',
+		'silentdecay'
+	]
+});
+
+// Demo Stuff
+
+// Hide all slider panels
+$('.js-slider').hide();
+
+// Watch for clicks
+$('.toggle-button').on( 'click', function () {
+
+	'use strict';
+
+	// Cache selectors
+	var button = $(this);
+	var nextPanel = button.next('.js-slider');
+
+	// Conditional label if slider visible
+	var label = nextPanel.is(':visible') ? 'Show Source' : 'Hide Source';
+
+	// Toggle next slider panel
+	nextPanel.slideToggle( 200 );
+
+	// Apply conditional label
+	button.html( label );
+
+});
+
+	</script>
+
+</body>
+</html>
