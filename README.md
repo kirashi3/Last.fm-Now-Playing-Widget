@@ -14,9 +14,9 @@ The plugin requires [jQuery](http://jquery.com/download/), we recommend using th
 
   Make sure you include jQuery before adding the plugin at the bottom of your HTML document
 
-  ```javascript
-  <script src="/scripts/vendor/jquery.js"><script>
-  <script src="/scripts/plugins/lastfmnowplaying.js"><script>
+  ```html
+  <script src="/scripts/vendor/jquery.js"></script>
+  <script src="/scripts/plugins/lastfmnowplaying.js"></script>
   ```
 
 2. **Add a Template**
