@@ -352,4 +352,5 @@ button:hover,
 
 .minimal-widget__artist {
 	font-weight: bold;
+	text-transform: uppercase;
 }
