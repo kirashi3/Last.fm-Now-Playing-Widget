@@ -23,7 +23,7 @@ The plugin requires [jQuery](http://jquery.com/download/), we recommend using th
 
   Add a template into your HTML document as in the example below. This can appear anywhere on your web page and can contain any markup you'd like. The template makes use of a number of custom tags surrounded by {}'s. Each template must have it's own ID.
 
-  ```javascript
+  ```html
   <script type="text/template" id="lastFmWidget">
   	<div>{ track.artist }</div>
   	<div>{ track.title }</div>
