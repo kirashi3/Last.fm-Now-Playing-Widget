@@ -13,17 +13,15 @@
 
 		<div class="intro-widget">
 
-		<script type="text/template" id="largeArtworkTemplate">
-			<a href="{ track.url }" class="large-widget" alt="View information on Last.fm">
-				<div class="large-widget__image-wrapper">
-					<img class="large-widget__image" src="{ track.image.extralarge }" alt="Album artwork">
-				</div>
-				<div class="large-widget__details">
-					<div class="large-widget__artist">{ track.artist }</div>
-					<div class="large-widget__title">{ track.title }</div>
-				</div>
-			</a>
-		</script>
+		<a href="http://www.last.fm/music/Thought+Forms/_/Industry" class="large-widget" alt="View information on Last.fm">
+			<div class="large-widget__image-wrapper">
+				<img class="large-widget__image" src="http://userserve-ak.last.fm/serve/300x300/68288024.jpg" alt="Album artwork">
+			</div>
+			<div class="large-widget__details">
+				<div class="large-widget__artist">Thought Forms</div>
+				<div class="large-widget__title">Industry</div>
+			</div>
+		</a>
 
 		</div>
 
@@ -151,17 +149,15 @@
 				
 				<h3>Large Artwork Template</h3>
 
-				<script type="text/template" id="largeArtworkTemplate">
-					<a href="{ track.url }" class="large-widget" alt="View information on Last.fm">
-						<div class="large-widget__image-wrapper">
-							<img class="large-widget__image" src="{ track.image.extralarge }" alt="Album artwork">
-						</div>
-						<div class="large-widget__details">
-							<div class="large-widget__artist">{ track.artist }</div>
-							<div class="large-widget__title">{ track.title }</div>
-						</div>
-					</a>
-				</script>
+				<a href="http://www.last.fm/music/Thought+Forms/_/Industry" class="large-widget" alt="View information on Last.fm">
+					<div class="large-widget__image-wrapper">
+						<img class="large-widget__image" src="http://userserve-ak.last.fm/serve/300x300/68288024.jpg" alt="Album artwork">
+					</div>
+					<div class="large-widget__details">
+						<div class="large-widget__artist">Thought Forms</div>
+						<div class="large-widget__title">Industry</div>
+					</div>
+				</a>
 
 				<button class="toggle-button">Show Source</button>
 
@@ -183,15 +179,13 @@
 				
 				<h3>Minimal Template</h3>
 
-				<script type="text/template" id="minimalTemplate">
-					<a class="minimal-widget" href="{ track.url }">
-						<img class=" minimal-widget__image" src="{ track.image.small }">
-						<div class="minimal-widget__details">
-							<div class="minimal-widget__artist">{ track.artist }</div>
-							<div class="minimal-widget__title">{ track.title }</div>
-						</div>
-					</a>
-				</script>
+				<a class="minimal-widget" href="http://www.last.fm/music/Thought+Forms/_/Industry">
+					<img class=" minimal-widget__image" src="http://userserve-ak.last.fm/serve/34s/68288024.jpg">
+					<div class="minimal-widget__details">
+						<div class="minimal-widget__artist">Thought Forms</div>
+						<div class="minimal-widget__title">Industry</div>
+					</div>
+				</a>
 
 				<button class="toggle-button">Show Source</button>
 
@@ -211,18 +205,18 @@
 				
 				<h3>Kitchen Sink Template</h3>
 
-				<script type="text/template" id="kitchenSinkTemplate">
-					<div class="kitchen-sink-widget">
-						<div class="kitchen-sink-widget__artist">Artist: { track.artist }</div>
-						<div class="kitchen-sink-widget__title">Title: { track.title }</div>
-						<div class="kitchen-sink-widget__album">Album: { track.album }</div>
-						<div class="kitchen-sink-widget__url">URL: { track.url }</div>
-						<img class="kitchen-sink-widget__image kitchen-sink-widget__image--small" src="{ track.image.small }">
-						<img class="kitchen-sink-widget__image kitchen-sink-widget__image--medium" src="{ track.image.medium }">
-						<img class="kitchen-sink-widget__image kitchen-sink-widget__image--large" src="{ track.image.large }">
-						<img class="kitchen-sink-widget__image kitchen-sink-widget__image--extralarge" src="{ track.image.extralarge }">
-					</div>
-				</script>
+
+				<div class="kitchen-sink-widget">
+					<div class="kitchen-sink-widget__artist">Artist: Thought Forms</div>
+					<div class="kitchen-sink-widget__title">Title: Industry</div>
+					<div class="kitchen-sink-widget__album">Album: Thought Forms</div>
+					<div class="kitchen-sink-widget__url">URL: http://www.last.fm/music/Thought+Forms/_/Industry</div>
+					<img class="kitchen-sink-widget__image kitchen-sink-widget__image--small" src="http://userserve-ak.last.fm/serve/34s/68288024.jpg">
+					<img class="kitchen-sink-widget__image kitchen-sink-widget__image--medium" src="http://userserve-ak.last.fm/serve/64s/68288024.jpg">
+					<img class="kitchen-sink-widget__image kitchen-sink-widget__image--large" src="http://userserve-ak.last.fm/serve/126/68288024.jpg">
+					<img class="kitchen-sink-widget__image kitchen-sink-widget__image--extralarge" src="http://userserve-ak.last.fm/serve/300x300/68288024.jpg">
+				</div>
+
 
 				<button class="toggle-button">Show Source</button>
 
@@ -250,21 +244,8 @@
 	<!-- Libraries -->
 	<script src="scripts/vendor/jquery/jquery.js"></script>
 
-	<!-- Plugins -->
-	<script src="scripts/plugins/jquery.lastfmnowplaying.js"></script>
-
 	<!-- Init Plugin -->
 	<script>
-
-$('#largeArtworkTemplate, #fancyArtworkTemplate, #minimalTemplate, #kitchenSinkTemplate').lastfmNowPlaying({
-	apiKey: 'd8abda572c7cfcb1522dfe167d6cd8fb',
-	members: [
-		'colouryum',
-		'pshillier',
-		'seengee',
-		'silentdecay'
-	]
-});
 
 // Demo Stuff
 
