@@ -213,7 +213,7 @@
 	Plugin.prototype.cleanTemplate = function () {
 
 		var self = this;
-		var images = $( self.element ).find('img');
+		var images = $( self.element ).next().find('img');
 
 		images.each( function () {
 
