@@ -1,6 +1,6 @@
 /**
  * Last.fm Now Playing
- * v0.2.0
+ * v0.1.1
  * Author: Mike Mitchell <@innernets> | DevTeam Inc <http://devteaminc.co/>
  * Licensed under the MIT license
  */
