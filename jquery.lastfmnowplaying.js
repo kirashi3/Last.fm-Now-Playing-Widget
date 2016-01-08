@@ -133,13 +133,16 @@
                     stillSameSong = false;
                 }
                 self.lastTrack = self.resultingTrack;
-                if (stillSameSong
+                // if still the same song is played, no need to render
+                if (stillSameSong) {
+                    return;
+                }
+                if (!requestFallbackArtworkEnabled
                     || (self.resultingTrack.image[0]['#text'] &&
                         self.resultingTrack.image[1]['#text'] &&
                         self.resultingTrack.image[2]['#text'] &&
-                        self.resultingTrack.image[3]['#text'])
-                    || !requestFallbackArtworkEnabled) {
-                    // Render immediately if still the same song is played, the artwork has been provided already or the fallback is disabled
+                        self.resultingTrack.image[3]['#text'])) {
+                    // Render immediately if the artwork has been provided already or the fallback is disabled
                     callRender();
                 } else {
                     // Request artwork from fallback source
